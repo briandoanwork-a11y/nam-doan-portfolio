@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nam (Brian) Doan | Data Analyst and Startup Founder</title>
+<meta name="description" content="Nam Doan. Data and Operations Analyst, Supply Chain thinker, and Founder of Fresh Loop. Based in Wollongong, NSW.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,700;1,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --lav:#EAE6F5;
+  --lav2:#D8D2EF;
+  --lime:#CCDF00;
+  --black:#0F0F0F;
+  --white:#FFFFFF;
+  --grey:#6B6B6B;
+  --ink:#1E1E2E;
+  --card:#FFFFFF;
+  --fg:#F4F2FB;
+  --indigo:#4F46E5;
+}
+body{font-family:'DM Sans',sans-serif;font-weight:400;background:var(--lav);color:var(--black);overflow-x:hidden;line-height:1.6}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(234,230,245,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.06);padding:0 48px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand .name{font-family:'Poppins',sans-serif;font-weight:900;font-size:14px;letter-spacing:-.01em}
+.nav-brand .role{font-size:11px;color:var(--grey);margin-top:1px}
+.nav-brand .role span{font-weight:700;color:var(--black);text-decoration:underline;text-decoration-color:var(--lime);text-underline-offset:3px}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--black);transition:color .2s}
+.nav-links a:hover{color:var(--indigo)}
+.nav-actions{display:flex;gap:10px}
+.btn{font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;letter-spacing:.03em;padding:10px 22px;border-radius:100px;cursor:pointer;display:inline-flex;align-items:center;transition:all .22s;border:2px solid transparent;text-decoration:none}
+.btn-dark{background:var(--black);color:var(--white);border-color:var(--black)}
+.btn-dark:hover{background:var(--lime);color:var(--black);border-color:var(--lime)}
+.btn-ghost{background:transparent;color:var(--black);border-color:rgba(0,0,0,.2)}
+.btn-ghost:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+.btn-lime{background:var(--lime);color:var(--black);border-color:var(--lime)}
+.btn-lime:hover{background:#b8cb00;border-color:#b8cb00}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:80px 48px 80px;position:relative;overflow:hidden;background:var(--lav)}
+.hero-left{}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.pill{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;padding:6px 15px;border-radius:100px;border:1.5px solid}
+.pill-dark{background:var(--black);color:var(--lime);border-color:var(--black)}
+.pill-out{background:transparent;color:var(--black);border-color:rgba(0,0,0,.2)}
+.pill-lime{background:var(--lime);color:var(--black);border-color:var(--lime)}
+h1.hero-h{font-family:'Poppins',sans-serif;font-size:clamp(44px,6.5vw,78px);font-weight:400;line-height:.97;letter-spacing:-.025em;margin-bottom:28px}
+h1.hero-h .it{font-style:italic;font-weight:400}
+h1.hero-h .hl{display:inline-block;background:var(--lime);padding:2px 10px;font-weight:900;font-style:normal}
+.hero-sub{font-size:16px;color:#444;line-height:1.8;max-width:440px;margin-bottom:36px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Hero photo side */
+.hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;height:580px}
+.photo-frame{width:390px;height:520px;border-radius:24px;overflow:hidden;background:var(--lav2);border:1.5px solid rgba(0,0,0,.07);position:relative}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.photo-empty{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(150deg,#D5CEEE 0%,#C8C0E8 100%)}
+.photo-empty p{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:rgba(0,0,0,.35);letter-spacing:.1em;text-transform:uppercase}
+.lime-bar{position:absolute;bottom:0;left:-24px;width:14px;height:200px;background:var(--lime);border-radius:8px}
+.stats-float{position:absolute;bottom:-18px;right:-6px;background:var(--white);border-radius:18px;padding:14px 18px;display:flex;gap:18px;box-shadow:0 8px 40px rgba(0,0,0,.11)}
+.sf-stat{text-align:center}
+.sf-n{font-family:'Poppins',sans-serif;font-weight:900;font-size:20px;color:var(--indigo);line-height:1}
+.sf-l{font-size:10px;color:var(--grey);white-space:nowrap;margin-top:2px}
+
+/* SHARED */
+.section-wrap{max-width:1140px;margin:0 auto;padding:0 48px}
+.eyebrow{font-family:'Poppins',sans-serif;font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:12px}
+.eyebrow-light{color:rgba(255,255,255,.4)}
+h2.sh{font-family:'Poppins',sans-serif;font-size:clamp(30px,4.5vw,52px);font-weight:900;line-height:1.05;letter-spacing:-.02em}
+h2.sh .it{font-style:italic}
+h2.sh-light{color:var(--white)}
+.sh-sub{font-size:15px;color:var(--grey);line-height:1.75;max-width:540px;margin-top:14px}
+.sh-sub-light{color:rgba(255,255,255,.5)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
+.rv.on{opacity:1;transform:none}
+
+/* ABOUT */
+#about{padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:56px;align-items:start}
+.lime-card{background:var(--lime);border-radius:20px;padding:32px;margin-bottom:28px}
+.lime-card .nm{font-family:'Poppins',sans-serif;font-weight:900;font-size:26px;line-height:1.1}
+.lime-card .tg{font-size:13px;font-weight:500;color:rgba(0,0,0,.55);margin-top:6px}
+.about-p{font-size:15px;line-height:1.85;color:#333;margin-bottom:18px}
+.about-p strong{font-weight:700;color:var(--black)}
+
+/* Skills card */
+.skills-card{background:var(--white);border-radius:20px;padding:32px;border:1px solid rgba(0,0,0,.06);margin-bottom:20px}
+.skill-group{margin-bottom:22px}
+.skill-group:last-child{margin-bottom:0}
+.skill-group-title{font-family:'Poppins',sans-serif;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:10px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:7px}
+.st{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:4px 12px;border-radius:100px;border:1px solid}
+.st-d{background:var(--black);color:var(--lime);border-color:var(--black)}
+.st-l{background:var(--lime);color:var(--black);border-color:var(--lime)}
+.st-o{background:transparent;color:var(--black);border-color:rgba(0,0,0,.18)}
+
+/* Strength cards */
+.strengths-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.str-card{background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:20px}
+.str-card .str-icon{font-size:22px;margin-bottom:10px}
+.str-card .str-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:14px;margin-bottom:6px}
+.str-card .str-p{font-size:12px;color:var(--grey);line-height:1.6}
+
+/* RECOGNITION */
+#recognition{background:var(--black);padding:88px 0}
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:20px;overflow:hidden;margin-top:52px}
+.rec-block{background:var(--black);padding:32px;transition:background .2s}
+.rec-block:hover{background:#1a1a1a}
+.rec-result{font-family:'Poppins',sans-serif;font-weight:900;font-size:32px;color:var(--lime);line-height:1;margin-bottom:10px}
+.rec-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:14px;color:var(--white);line-height:1.3;margin-bottom:6px}
+.rec-org{font-size:12px;color:rgba(255,255,255,.38);line-height:1.5}
+
+/* PROJECTS */
+#projects{background:var(--white);padding:100px 0}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+.proj-card{border:1.5px solid rgba(0,0,0,.08);border-radius:20px;padding:32px;background:var(--white);transition:all .25s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.proj-card:hover{border-color:rgba(0,0,0,.14);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
+.proj-card:hover::before{transform:scaleX(1)}
+.c1::before{background:#4F46E5}
+.c2::before{background:#10B981}
+.c3::before{background:#F59E0B}
+.c4::before{background:#EF4444}
+.c5::before{background:var(--lime)}
+.proj-type{font-family:'Poppins',sans-serif;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:12px}
+.proj-title{font-family:'Poppins',sans-serif;font-weight:900;font-size:19px;line-height:1.15;margin-bottom:12px}
+.proj-desc{font-size:14px;color:#555;line-height:1.75;margin-bottom:18px}
+.proj-outcomes{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;flex:1}
+.proj-outcomes li{font-size:13px;color:#444;padding-left:20px;position:relative;line-height:1.6}
+.proj-outcomes li::before{content:'✓';position:absolute;left:0;font-size:11px;font-weight:900;color:var(--black);background:var(--lime);width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;top:3px;line-height:1}
+.proj-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.tool{font-size:11px;font-weight:500;padding:4px 11px;background:var(--fg);border-radius:100px;color:#444;border:1px solid rgba(0,0,0,.07)}
+.proj-link{margin-top:auto}
+
+/* EXPERIENCE */
+#experience{background:var(--lav);padding:100px 0}
+.timeline{position:relative;margin-top:56px;padding-left:184px;border-left:1.5px solid rgba(0,0,0,.1)}
+.tl-item{position:relative;padding-bottom:52px;padding-left:32px}
+.tl-item::before{content:'';position:absolute;left:-8px;top:8px;width:13px;height:13px;background:var(--lime);border-radius:50%;border:2.5px solid var(--lav)}
+.tl-meta{position:absolute;left:-184px;width:140px;text-align:right;padding-top:6px}
+.tl-date{font-family:'Poppins',sans-serif;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:rgba(0,0,0,.35);display:block;margin-bottom:3px}
+.tl-place{font-size:11px;color:var(--grey)}
+.tl-role{font-family:'Poppins',sans-serif;font-weight:900;font-size:19px;margin-bottom:3px}
+.tl-org{font-family:'Poppins',sans-serif;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--indigo);margin-bottom:16px}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:9px}
+.tl-bullets li{font-size:14px;color:#444;padding-left:18px;position:relative;line-height:1.65}
+.tl-bullets li::before{content:'›';position:absolute;left:0;color:var(--lime);font-weight:900}
+
+/* LIFE */
+#life{background:var(--black);padding:100px 0}
+.life-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:56px}
+.life-sub{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;margin-top:14px}
+.album-grid{column-count:3;column-gap:16px}
+.album-item{display:inline-block;width:100%;margin:0 0 16px;border-radius:16px;overflow:hidden;position:relative;cursor:pointer;background:#141414;border:1px solid rgba(255,255,255,.06)}
+.album-item img{width:100%;height:auto;object-fit:cover;transition:transform .4s,filter .4s;filter:brightness(.95)}
+.album-item:hover img{transform:scale(1.03);filter:brightness(1)}
+.album-item .caption{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 100%);color:#fff;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;opacity:0;transition:opacity .3s}
+.album-item:hover .caption{opacity:1}
+/* span classes left for compatibility */
+.sp-wide,.sp-med,.sp-sm,.sp-tall,.sp-hero{grid-column:auto;grid-row:auto}
+
+/* PRESS */
+#press{background:var(--white);padding:100px 0}
+.press-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
+.press-card{border-radius:20px;overflow:hidden;border:1.5px solid rgba(0,0,0,.08);background:var(--white);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.press-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.09)}
+.press-card-link{text-decoration:none;color:inherit}
+.press-card-top{height:180px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;position:relative}
+.press-top-news{background:linear-gradient(135deg,#3730A3 0%,#4F46E5 100%)}
+.press-top-yt{background:linear-gradient(135deg,#991B1B 0%,#EF4444 100%)}
+.press-card-badge{font-family:'Poppins',sans-serif;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:4px}
+.press-card-source{font-family:'Poppins',sans-serif;font-size:15px;font-weight:900;color:var(--white)}
+.press-play-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%)}
+.press-play{width:56px;height:56px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--white);backdrop-filter:blur(4px)}
+.press-card-body{padding:28px;display:flex;flex-direction:column;flex:1}
+.press-card-hl{font-family:'Poppins',sans-serif;font-weight:900;font-size:17px;line-height:1.25;margin-bottom:12px;color:var(--black)}
+.press-card-desc{font-size:13px;color:#555;line-height:1.75;margin-bottom:10px;flex:1}
+.press-card-meta{font-size:11px;font-style:italic;color:var(--grey);margin-bottom:22px}
+
+/* CONTACT */
+#contact{background:var(--black);padding:100px 0 72px}
+.contact-h{font-family:'Poppins',sans-serif;font-size:clamp(40px,7vw,88px);font-weight:900;color:var(--white);line-height:.95;letter-spacing:-.025em;margin-bottom:22px}
+.contact-h .it{font-style:italic;color:var(--lime)}
+.contact-sub{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;max-width:480px;margin-bottom:56px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-card{display:flex;align-items:center;gap:16px;padding:20px 24px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.04);transition:all .2s;text-decoration:none}
+.contact-card:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18);transform:translateX(4px)}
+.cc-icon{width:42px;height:42px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:var(--lime);font-family:'Poppins',sans-serif;flex-shrink:0}
+.cc-label{font-family:'Poppins',sans-serif;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2px}
+.cc-value{font-size:14px;font-weight:500;color:var(--white)}
+
+/* CTA strip */
+.nl-wrap{border-top:1px solid rgba(255,255,255,.07);margin-top:60px;padding-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.nl-title{font-family:'Poppins',sans-serif;font-weight:900;font-size:20px;color:var(--white);margin-bottom:8px}
+.nl-sub{font-size:13px;color:rgba(255,255,255,.4);line-height:1.75}
+.nl-actions{display:flex;flex-wrap:wrap;gap:12px}
+.nl-note{font-size:13px;color:rgba(255,255,255,.42);margin-top:16px;line-height:1.6}
+.nl-note strong{color:var(--white);font-weight:700}
+.btn-ghost-light{background:transparent;color:var(--white);border-color:rgba(255,255,255,.18)}
+.btn-ghost-light:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:22px 48px;display:flex;justify-content:space-between;align-items:center}
+.foot-l{font-size:12px;color:rgba(255,255,255,.28)}
+.foot-l span{color:var(--lime);font-weight:700}
+.foot-r{font-size:12px;color:rgba(255,255,255,.28)}
+
+/* HAMBURGER */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;padding:4px;border-radius:8px;transition:background .2s}
+.nav-burger:hover{background:rgba(0,0,0,.06)}
+.nav-burger span{display:block;height:2px;background:var(--black);border-radius:2px;transition:all .3s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE MENU DRAWER */
+.mobile-menu{position:fixed;top:62px;left:0;right:0;background:rgba(234,230,245,.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.08);z-index:998;padding:0 24px;max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1),padding .35s}
+.mobile-menu.open{max-height:420px;padding:18px 24px 28px}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:2px}
+.mobile-menu ul li a{display:block;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:var(--black);padding:11px 0;border-bottom:1px solid rgba(0,0,0,.06);transition:color .2s}
+.mobile-menu ul li:last-child a{border-bottom:none}
+.mobile-menu ul li a:hover{color:var(--indigo)}
+.mobile-menu-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  #hero{grid-template-columns:1fr;padding:96px 24px 56px;min-height:auto}
+  .hero-right{height:380px}
+  .photo-frame{width:280px;height:360px}
+  .album-grid{column-count:2;column-gap:12px}
+  .life-intro{grid-template-columns:1fr}
+  .section-wrap{padding:0 24px}
+  .strengths-row{grid-template-columns:1fr}
+  .rec-grid{grid-template-columns:1fr 1fr}
+  .projects-grid,.contact-grid,.media-grid{grid-template-columns:1fr}
+  .nl-wrap{grid-template-columns:1fr;gap:22px}
+  .timeline{padding-left:0;border-left:none}
+  .tl-item{padding-left:24px;border-left:1.5px solid rgba(0,0,0,.1)}
+  .tl-item::before{left:-8px}
+  .tl-meta{position:static;text-align:left;width:auto;margin-bottom:10px}
+  #recognition,#projects,#experience,#press,#contact,#about{padding:72px 0}
+  footer{flex-direction:column;gap:6px;text-align:center;padding:20px 24px}
+  .press-why{padding:32px}
+  .press-story{padding:32px}
+}
+@media(max-width:640px){
+  .album-grid{column-count:1}
+  .cc-value{font-size:13px}
+  .nl-actions{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-brand">
+    <div class="name">Nam (Brian) Doan.</div>
+    <div class="role">Data Analyst. Startup Founder. Supply Chain Thinker.</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#life">Life</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="https://www.linkedin.com/in/namdoan18272124/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+    <a href="mailto:namdoan.study@gmail.com" class="btn btn-dark">Contact</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" class="mobile-nav-link">About</a></li>
+    <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+    <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+    <li><a href="#life" class="mobile-nav-link">Life</a></li>
+    <li><a href="#press" class="mobile-nav-link">Press</a></li>
+    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-actions">
+    <a href="mailto:namdoan.study@gmail.com" class="btn btn-dark">Get in touch</a>
+    <a href="https://www.linkedin.com/in/namdoan18272124/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="top" style="min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:80px 48px 100px;overflow:hidden;background:var(--lav)">
+  <div class="hero-left">
+    <div class="hero-pills">
+      <span class="pill pill-dark">Open to opportunities</span>
+      <span class="pill pill-out">Wollongong, NSW</span>
+      <span class="pill pill-out">UOW Business Analytics + Supply Chain</span>
+    </div>
+    <h1 class="hero-h">
+      Insight driven.<br>
+      <span class="hl">Quality focused.</span>
+    </h1>
+    <p class="hero-sub">
+      Fueled by insight, shaped by hard work, and driven to build beyond expectations.
+    </p>
+    <div class="hero-chips">
+      <span class="pill pill-out">Supply Chain Analysis</span>
+      <span class="pill pill-lime">Data Analytics</span>
+      <span class="pill pill-out">Operations Planning</span>
+      <span class="pill pill-lime">Startup Ops</span>
+      <span class="pill pill-out">Product Operations</span>
+      <span class="pill pill-lime">KPI Reporting</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-dark">Let's connect</a>
+      <a href="#projects" class="btn btn-ghost">View my work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-frame">
+      <img src="brian-hero.jpg" alt="Nam (Brian) Doan, Fresh Loop Founder">
+    </div>
+    <div class="lime-bar"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <h2 class="sh">This is <span class="it">me</span></h2>
+    <div class="about-grid rv">
+      <!-- Left -->
+      <div>
+        <div class="lime-card">
+          <div class="nm">Nam (Brian) Doan.</div>
+          <div class="tg">Data Analyst · Startup Founder · Supply Chain Thinker</div>
+        </div>
+        <p class="about-p">I'm a <strong>Bachelor of Business student at the University of Wollongong</strong>, double majoring in Supply Chain Management and Business Analytics, with a WAM of 82/100.</p>
+        <p class="about-p">I don't just study systems. I build them. Through academic projects and running <strong>Fresh Loop</strong>, I've developed practical experience turning raw information into decisions that change how a business operates.</p>
+        <p class="about-p">I'm early in my career, and I work like it: with <strong>curiosity, urgency, and a bias for action.</strong></p>
+        <a href="#projects" style="display:inline-flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;font-size:13px;font-style:italic;color:var(--grey);margin-top:8px">Here's what I've actually built &nbsp;→</a>
+      </div>
+      <!-- Right -->
+      <div>
+        <!-- About photo -->
+        <div style="border-radius:16px;overflow:hidden;margin-bottom:20px;height:260px;position:relative">
+          <img src="zerosaver-pitch.jpg" alt="Brian pitching ZeroSaver at iAccelerate" style="width:100%;height:100%;object-fit:cover;object-position:top center">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.55));padding:16px 18px">
+            <span style="font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.1em;text-transform:uppercase">Pitching ZeroSaver at iAccelerate · UOW</span>
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skill-group">
+            <div class="skill-group-title">Analytics stack</div>
+            <div class="skill-tags">
+              <span class="st st-d">Python</span><span class="st st-o">pandas</span><span class="st st-l">SQL</span><span class="st st-o">Power BI</span><span class="st st-d">DAX</span><span class="st st-o">Tableau</span><span class="st st-l">R / tidyverse</span><span class="st st-o">SAS Viya</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Operations stack</div>
+            <div class="skill-tags">
+              <span class="st st-d">Supply Chain Ops</span><span class="st st-o">Forecasting</span><span class="st st-l">Inventory Analysis</span><span class="st st-o">KPI Reporting</span><span class="st st-d">Excel</span><span class="st st-o">Power Query</span><span class="st st-l">Process Mapping</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Startup stack</div>
+            <div class="skill-tags">
+              <span class="st st-d">MVP Planning</span><span class="st st-o">Product Ops</span><span class="st st-l">Customer Discovery</span><span class="st st-o">Partnerships</span><span class="st st-d">Go-to-market</span><span class="st st-o">Figma</span><span class="st st-l">Notion</span>
+            </div>
+          </div>
+        </div>
+        <div class="strengths-row">
+          <div class="str-card">
+            <div class="str-title">Data & analytics</div>
+            <p class="str-p">I turn business questions into structured analysis, dashboards and recommendations using SQL, Excel, Power BI, Python, Tableau and R.</p>
+          </div>
+          <div class="str-card">
+            <div class="str-title">Operations thinking</div>
+            <p class="str-p">I enjoy improving workflows, mapping processes, designing KPI systems and finding practical ways to make teams move faster.</p>
+          </div>
+          <div class="str-card">
+            <div class="str-title">Founder execution</div>
+            <p class="str-p">Fresh Loop pushed me across product, partnerships, pricing, marketing, app launch and stakeholder communication all at once.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div style="background:var(--lav);padding:0 0 80px">
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;border-radius:20px;overflow:hidden">
+      <div style="position:relative;height:280px">
+        <img src="pitch-iaccelerate.jpg" alt="Brian pitching at iAccelerate" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:16px">
+          <span style="font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.1em;text-transform:uppercase">iAccelerate Pitch · UOW</span>
+        </div>
+      </div>
+      <div style="position:relative;height:280px">
+        <img src="freshloop-app.jpg" alt="Fresh Loop app" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:16px">
+          <span style="font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.1em;text-transform:uppercase">Fresh Loop App · Live</span>
+        </div>
+      </div>
+      <div style="position:relative;height:280px">
+        <img supply-chain-award.png" alt="3rd Place Supply Chain Competition" style="width:100%;height:100%;object-fit:cover;object-position:center">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:16px">
+          <span style="font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.1em;text-transform:uppercase">3rd Place · UOW Supply Chain</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RECOGNITION -->
+<section id="recognition">
+  <div class="section-wrap">
+    <div class="eyebrow eyebrow-light">Awards & Recognition</div>
+    <h2 class="sh sh-light">Signals worth noticing.</h2>
+    <p class="sh-sub sh-sub-light">A mix of academic competitions, entrepreneurship programs, community partnerships and media validation.</p>
+    <div class="rec-grid rv">
+      <a href="https://www.credly.com/badges/0f304611-aacf-42a6-8fc5-5927bcc7c798/linked_in_profile" target="_blank" class="rec-block" style="text-decoration:none;display:block">
+        <div class="rec-result">Top 10</div>
+        <div class="rec-title">ISRM Intervarsity Strategic Risk Case Study Competition</div>
+        <div class="rec-org">NSW/ACT · Institute of Strategic Risk Management · Out of 70 teams · Sep 2025</div>
+        <div style="margin-top:12px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.08em">View credential →</div>
+      </a>
+      <div class="rec-block" style="padding:0;overflow:hidden;position:relative">
+        <img src="supply-chain-cert.png" alt="Supply Chain 3rd Place Certificate" style="width:100%;height:160px;object-fit:cover;object-position:top;filter:brightness(.4)">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 28px">
+          <div class="rec-result" style="font-size:24px">3rd Place</div>
+          <div class="rec-title">UOW Supply Chain Competition</div>
+          <div class="rec-org">UOW Supply Chain Success Society · Faculty of Business & Law · August 2024</div>
+        </div>
+      </div>
+      <div class="rec-block">
+        <div class="rec-result">Participant</div>
+        <div class="rec-title">FoundersHack Sydney 2026</div>
+        <div class="rec-org">Folklore Ventures · Food surplus marketplace concept · March 2026</div>
+      </div>
+      <div class="rec-block">
+        <div class="rec-result">Participant</div>
+        <div class="rec-title">UniHack 2025: White Christmas</div>
+        <div class="rec-org">Australia's largest student hackathon · AI photo-protection tool against deepfake scraping · Built in 24 hours</div>
+      </div>
+      <div class="rec-block">
+        <div class="rec-result">Program</div>
+        <div class="rec-title">King's Trust Australia: Young Entrepreneurs Program</div>
+        <div class="rec-org">Entrepreneurship, mentoring and funding pathway</div>
+      </div>
+      <a href="https://www.credly.com/badges/f25ecd91-63d0-43ce-97f5-b0202285b683/linked_in_profile" target="_blank" class="rec-block" style="text-decoration:none;display:block">
+        <div class="rec-result">Graduate</div>
+        <div class="rec-title">iAccelerate Activate Program</div>
+        <div class="rec-org">University of Wollongong · Startup accelerator & entrepreneurship program · Verified badge on Credly</div>
+        <div style="margin-top:12px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.08em">View credential →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-wrap">
+    <div class="eyebrow">04  Projects</div>
+    <h2 class="sh">Things I've <span class="it">actually built.</span></h2>
+    <p class="sh-sub">Each project shows evidence of data analysis, operational thinking and execution under real constraints.</p>
+    <div class="projects-grid">
+
+      <!-- Fresh Loop -->
+      <div class="proj-card c1 rv">
+        <div style="height:180px;border-radius:10px;overflow:hidden;margin-bottom:20px;position:relative">
+          <img src="freshloop-app.jpg" alt="Fresh Loop app" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <div class="proj-type">Founder · Product & Operations</div>
+        <h3 class="proj-title">Fresh Loop</h3>
+        <p class="proj-desc">A food surplus marketplace connecting local cafés, bakeries and venues with nearby students and locals seeking affordable end-of-day meals. Built from zero to a live pre-launch product.</p>
+        <ul class="proj-outcomes">
+          <li>Built public waitlist and early venue pipeline across Wollongong and the Illawarra.</li>
+          <li>Secured Healthy Cities Australia partnership for food relief alignment.</li>
+          <li>Led product, pricing, marketplace operations, Play Store preparation and go-to-market planning.</li>
+        </ul>
+        <div class="proj-tools">
+          <span class="tool">Product strategy</span><span class="tool">Operations</span><span class="tool">Partnerships</span><span class="tool">Pricing</span><span class="tool">Go-to-market</span>
+        </div>
+        <a href="https://www.freshloop.com.au/" target="_blank" class="btn btn-dark proj-link">Visit Fresh Loop website →</a>
+      </div>
+
+      <!-- Amazon Analysis -->
+      <div class="proj-card c2 rv">
+        <div class="proj-type">Data Analysis · Python</div>
+        <h3 class="proj-title">Amazon Category Demand & Inventory Analysis</h3>
+        <p class="proj-desc">Cleaned structured and review-based Amazon product data, then translated discount, demand and category insights into inventory and demand-planning recommendations.</p>
+        <ul class="proj-outcomes">
+          <li>Explored demand patterns across product categories using Python and pandas.</li>
+          <li>Converted technical findings into practical supply chain recommendations.</li>
+          <li>Presented insights visually for business decision-making.</li>
+        </ul>
+        <div class="proj-tools">
+          <span class="tool">Python</span><span class="tool">pandas</span><span class="tool">matplotlib</span><span class="tool">Inventory Analysis</span>
+        </div>
+        <a href="https://colab.research.google.com/drive/1MMHfcfFck0TrLJNieNU-J6YEwKhVSC3v?usp=drive_link" target="_blank" class="btn btn-dark proj-link">View Colab notebook →</a>
+      </div>
+
+      <!-- CRM Dashboard -->
+      <div class="proj-card c3 rv">
+        <div class="proj-type">Business Intelligence · Power BI</div>
+        <h3 class="proj-title">CRM Health & Follow-ups Dashboard</h3>
+        <p class="proj-desc">A one-page Power BI dashboard tracking data freshness, next-action coverage and 30-day customer touches to improve pipeline discipline. Built to be used, not just presented.</p>
+        <ul class="proj-outcomes">
+          <li>Designed KPI logic for action prioritisation across a sales pipeline.</li>
+          <li>Used DAX rules to surface follow-up gaps and data quality issues.</li>
+          <li>Delivered a practical dashboard intended for real daily team usage.</li>
+        </ul>
+        <div class="proj-tools">
+          <span class="tool">Power BI</span><span class="tool">DAX</span><span class="tool">CRM Analytics</span><span class="tool">KPI Design</span>
+        </div>
+        <a href="https://drive.google.com/file/d/1zRR0Pu_27pJldLyetdn5S9sAOcM62uxl/view?usp=drive_link" target="_blank" class="btn btn-dark proj-link">View dashboard file →</a>
+      </div>
+
+      <!-- Supply Chain Strategy -->
+      <div class="proj-card c4 rv">
+        <div class="proj-type">Supply Chain · Operations Strategy</div>
+        <h3 class="proj-title">Supply Chain Strategy & Operations Analysis</h3>
+        <p class="proj-desc">An applied supply chain project analysing operational strategy, demand uncertainty, inventory decisions and process improvement opportunities through a business case lens.</p>
+        <ul class="proj-outcomes">
+          <li>Applied supply chain frameworks to diagnose operational challenges and improvement priorities.</li>
+          <li>Connected demand, inventory and supplier considerations to practical business recommendations.</li>
+          <li>Translated academic analysis into decision-ready insights for managers and stakeholders.</li>
+        </ul>
+        <div class="proj-tools">
+          <span class="tool">Supply Chain Strategy</span><span class="tool">Inventory Analysis</span><span class="tool">Forecasting</span><span class="tool">Excel</span>
+        </div>
+        <a href="https://drive.google.com/file/d/12RGQ6IkTUPxrgHqNsnX1hHaJGXJ-QwGF/view?usp=drive_link" target="_blank" class="btn btn-dark proj-link">View project report →</a>
+      </div>
+
+      <!-- Real Estate -->
+      <div class="proj-card c5 rv">
+        <div class="proj-type">Data Analysis · Market Insights</div>
+        <h3 class="proj-title">Real Estate Market Analysis</h3>
+        <p class="proj-desc">A real estate analysis project exploring property market patterns, price drivers and location-based insights to support clearer investment and business decision-making.</p>
+        <ul class="proj-outcomes">
+          <li>Cleaned and structured real estate data for comparison across property, suburb and price variables.</li>
+          <li>Identified market patterns and potential drivers behind property value differences.</li>
+          <li>Presented findings through business-friendly visuals and insight summaries for non-technical audiences.</li>
+        </ul>
+        <div class="proj-tools">
+          <span class="tool">Data Cleaning</span><span class="tool">Market Analysis</span><span class="tool">Excel</span><span class="tool">Power BI</span><span class="tool">Insight Storytelling</span>
+        </div>
+        <a href="https://drive.google.com/file/d/1pYZ1NP_yfyjQojVW031rHuD43lbTnFiy/view?usp=drive_link" target="_blank" class="btn btn-dark proj-link">View analysis file →</a>
+      </div>
+
+      <!-- White Christmas -->
+      <div class="proj-card c1 rv">
+        <div class="proj-type">Hackathon · UniHack 2025 · Built in 24hrs</div>
+        <h3 class="proj-title">White Christmas</h3>
+        <p class="proj-desc">An invisible shield for digital identity. Photos look like scrambled static to AI scrapers and silently decode into perfect clarity for people you trust. Built to fight deepfake fraud targeting everyday people.</p>
+        <ul class="proj-outcomes">
+          <li>Tackled AI scraping at scale: malicious actors harvesting clean social media photos to craft deepfakes and identity fraud.</li>
+          <li>Applied adversarial data-poisoning research (AFP × Monash University) into a practical, user-friendly full-stack tool.</li>
+          <li>Designed, built and pitched a working 4-layer protection system in 24 hours at UniHack 2025.</li>
+        </ul>
+        <div class="proj-tools">
+          <span class="tool">Full-stack</span><span class="tool">Adversarial ML</span><span class="tool">Data Poisoning</span><span class="tool">UniHack 2025</span><span class="tool">24hrs</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto">
+          <a href="https://white-christmas-2a382a.netlify.app/" target="_blank" class="btn btn-dark">View live site →</a>
+          <a href="https://drive.google.com/file/d/1gDONKpH7Zqx1yw2_2qjRPMlJLkvlT5aT/view?usp=sharing" target="_blank" class="btn btn-ghost">Project files →</a>
+        </div>
+      </div>
+
+      <!-- Zerooh! -->
+      <div class="proj-card c2 rv">
+        <div class="proj-type">FoundersHack 2026 · Startup Concept</div>
+        <h3 class="proj-title">Zerooh!</h3>
+        <p class="proj-desc">A food surplus marketplace concept developed at FoundersHack Sydney 2026, the same core problem that became Fresh Loop. Connecting venues with nearby customers to sell end-of-day food instead of wasting it.</p>
+        <ul class="proj-outcomes">
+          <li>Developed and validated the food surplus marketplace concept under a 48-hour FoundersHack sprint with Folklore Ventures.</li>
+          <li>Stress-tested assumptions around venue behaviour, customer willingness to pay, and same-day logistics.</li>
+          <li>Pitched to judges and investors. The concept directly evolved into Fresh Loop's live product.</li>
+        </ul>
+        <div class="proj-tools">
+          <span class="tool">FoundersHack 2026</span><span class="tool">Startup Validation</span><span class="tool">Marketplace Design</span><span class="tool">Pitch</span><span class="tool">48hrs</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto">
+          <a href="https://drive.google.com/file/d/1gDONKpH7Zqx1yw2_2qjRPMlJLkvlT5aT/view?usp=sharing" target="_blank" class="btn btn-dark">View pitch deck →</a>
+          <a href="https://www.freshloop.com.au/" target="_blank" class="btn btn-ghost">See what it became →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="eyebrow">05  Experience</div>
+    <h2 class="sh">Where I've made <span class="it">an impact.</span></h2>
+    <p class="sh-sub">Built through startup work, student leadership, analytics projects and event operations.</p>
+    <div class="timeline">
+
+      <div class="tl-item rv">
+        <div class="tl-meta">
+          <span class="tl-date">2025 to Present</span>
+          <span class="tl-place">Wollongong, NSW</span>
+        </div>
+        <div class="tl-role">Founder & Operations Lead</div>
+        <div class="tl-org">Fresh Loop</div>
+        <ul class="tl-bullets">
+          <li>Led operations and analytics planning, translating user and business needs into MVP workflows and reporting requirements.</li>
+          <li>Built KPI thinking around partner activity, order flow, retention and marketplace performance.</li>
+          <li>Coordinated across product, marketing and business team members to support data-driven decisions in a sustainability-focused startup.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item rv">
+        <div class="tl-meta">
+          <span class="tl-date">Sep 2025 to Present</span>
+          <span class="tl-place">NSW / ACT Hybrid</span>
+        </div>
+        <div class="tl-role">Committee Member</div>
+        <div class="tl-org">ISRM NSW/ACT Young Professionals</div>
+        <ul class="tl-bullets">
+          <li>Planned risk-focused panels and networking sessions with industry speakers.</li>
+          <li>Supported run sheets, speaker liaison and event operations for smooth attendee experiences.</li>
+          <li>Built an Excel KPI tracker monitoring registrations, attendance and member conversion.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item rv">
+        <div class="tl-meta">
+          <span class="tl-date">May 2024 to Feb 2025</span>
+          <span class="tl-place">Wollongong, NSW</span>
+        </div>
+        <div class="tl-role">Event Executive</div>
+        <div class="tl-org">VGong Students Club</div>
+        <ul class="tl-bullets">
+          <li>Managed full-cycle event budgeting and financial oversight across cultural events.</li>
+          <li>Helped organise events exceeding 100 attendees, building relationships with sponsors and university partners.</li>
+          <li>Maximised event value and brand exposure through stakeholder engagement and planning discipline.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIFE -->
+<section id="life">
+  <div class="section-wrap">
+    <div class="life-intro rv">
+      <div>
+        <div class="eyebrow eyebrow-light">07  Life &amp; Community</div>
+        <h2 class="sh sh-light">Beyond the <span class="it">spreadsheet.</span></h2>
+        <p class="life-sub">Pitching at iAccelerate, receiving awards at UOW, and representing Vietnamese culture at campus events. This is the part of university that shaped who I am as much as any subject.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end">
+        <span class="pill pill-out" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)">VGong Students Club</span>
+        <span class="pill pill-out" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)">iAccelerate Pitch</span>
+        <span class="pill pill-out" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)">Supply Chain Award</span>
+        <span class="pill pill-dark">UOW · Wollongong</span>
+      </div>
+    </div>
+
+    <div class="album-grid rv">
+
+      <div class="album-item sp-hero">
+        <img src="freshloop-app.jpg" alt="Fresh Loop app: Support local. Waste less. Save more.">
+        <div class="caption">Fresh Loop live app · Support local. Waste less.</div>
+      </div>
+
+      <div class="album-item sp-med">
+        <img src="brian-hero.jpg" alt="Brian Doan, Fresh Loop founder">
+        <div class="caption">Fresh Loop founder</div>
+      </div>
+
+      <div class="album-item sp-med">
+        <img src="pitch-iaccelerate.jpg" alt="Brian pitching at iAccelerate">
+        <div class="caption">Pitching at iAccelerate · UOW</div>
+      </div>
+
+      <div class="album-item sp-sm">
+        <img src="supply-chain-award.png" alt="3rd place Supply Chain Competition">
+        <div class="caption">3rd Place · Supply Chain Competition</div>
+      </div>
+
+      <div class="album-item sp-med">
+        <img src="zerosaver-pitch.jpg" alt="Pitching ZeroSaver at iAccelerate">
+        <div class="caption">ZeroSaver pitch · iAccelerate stage</div>
+      </div>
+
+      <div class="album-item sp-sm">
+        <img src="supply-chain-cert.png" alt="UOW Supply Chain Certificate">
+        <div class="caption">UOW Supply Chain Cert</div>
+      </div>
+
+      <div class="album-item sp-wide">
+        <img src="IMG_5960.JPG" alt="VGong Students Club team">
+        <div class="caption">VGong crew · Club planning session</div>
+      </div>
+
+      <div class="album-item sp-med">
+        <img src="IMG_5578.JPG" alt="VGong Students Club stall">
+        <div class="caption">VGong Club stall · Campus event</div>
+      </div>
+
+      <div class="album-item sp-sm">
+        <img src="IMG_5576.JPG" alt="Vietnamese cultural event at UOW">
+        <div class="caption">Vietnamese cultural celebration · UOW</div>
+      </div>
+
+      <div class="album-item sp-med">
+        <img src="IMG_7125.JPG" alt="VGong night event">
+        <div class="caption">VGong cultural night · Wollongong</div>
+      </div>
+
+      <div class="album-item sp-med">
+        <img src="IMG_3457.JPG" alt="VGong Students Club cultural stall">
+        <div class="caption">Cultural stall · UOW open day</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="section-wrap">
+    <div class="eyebrow">08  Press &amp; Media</div>
+    <h2 class="sh">Fresh Loop in <span class="it">the spotlight.</span></h2>
+    <div class="press-grid rv">
+
+      <!-- Pulse Illawarra -->
+      <div class="press-card">
+        <div class="press-card-top" style="height:220px;padding:0;position:relative;overflow:hidden">
+          <img src="freshloop-team.png" alt="Fresh Loop team" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 50%)"></div>
+          <div style="position:absolute;bottom:0;left:0;padding:20px 24px">
+            <div class="press-card-badge">News Feature</div>
+            <div class="press-card-source">The Pulse Illawarra</div>
+          </div>
+        </div>
+        <div class="press-card-body">
+          <h3 class="press-card-hl">Wollongong startup tackles food waste while feeding cash-strapped locals</h3>
+          <p class="press-card-desc">Pulse Illawarra covered Fresh Loop's mission to turn surplus food into affordable meals, connecting Wollongong cafés and bakeries with nearby students and locals through an end-of-day marketplace app.</p>
+          <p class="press-card-meta">March 22, 2026 · Written by Janine Graham</p>
+          <a href="https://www.pulseillawarra.com.au/p/wollongong-startup-tackles-food-waste" target="_blank" class="btn btn-dark" style="margin-top:auto;display:inline-flex">Read the article →</a>
+        </div>
+      </div>
+
+      <!-- YouTube Podcast -->
+      <a href="https://youtu.be/BHiZ_WjvCLo" target="_blank" class="press-card press-card-link">
+        <div class="press-card-top" style="height:220px;padding:0;position:relative;overflow:hidden">
+          <img src="podcast-screenshot.jpg" alt="Brian on Fresh Loop podcast" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.15) 60%,transparent 100%)"></div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+            <div class="press-play">▶</div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;padding:20px 24px">
+            <div class="press-card-badge">YouTube · Podcast</div>
+            <div class="press-card-source" style="color:rgba(255,255,255,.9)">Fresh Loop Feature</div>
+          </div>
+        </div>
+        <div class="press-card-body">
+          <h3 class="press-card-hl">Fresh Loop: The Podcast Deep Dive</h3>
+          <p class="press-card-desc">A podcast episode diving into Fresh Loop's story: the problem we're solving, how the marketplace works, and what it's like building a sustainability-focused startup in Wollongong.</p>
+          <p class="press-card-meta">2026 · Video interview</p>
+          <span class="btn btn-dark" style="margin-top:auto;display:inline-flex">Watch on YouTube →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-wrap">
+    <h2 class="contact-h">Let's work<br><span class="it">together.</span></h2>
+    <p class="contact-sub">Open to data analyst, supply chain analyst, operations analyst, product operations and startup roles. Happy to chat about internship, part-time or project-based opportunities across Sydney, Wollongong or remote.</p>
+    <div class="contact-grid">
+      <a href="mailto:namdoan.study@gmail.com" class="contact-card">
+        <div class="cc-icon">✉</div>
+        <div><div class="cc-label">Email</div><div class="cc-value">namdoan.study@gmail.com</div></div>
+      </a>
+      <a href="https://www.linkedin.com/in/namdoan18272124/" target="_blank" class="contact-card">
+        <div class="cc-icon">in</div>
+        <div><div class="cc-label">LinkedIn</div><div class="cc-value">linkedin.com/in/namdoan18272124</div></div>
+      </a>
+      <a href="https://www.freshloop.com.au/" target="_blank" class="contact-card">
+        <div class="cc-icon">FL</div>
+        <div><div class="cc-label">Fresh Loop</div><div class="cc-value">freshloop.com.au</div></div>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1o4qmg_CTdnrFXBCdhPcLJX7zJbIozQID?usp=drive_link" target="_blank" class="contact-card">
+        <div class="cc-icon">GD</div>
+        <div><div class="cc-label">Project Files</div><div class="cc-value">Google Drive folder</div></div>
+      </a>
+      <a href="tel:+61410104928" class="contact-card">
+        <div class="cc-icon">PH</div>
+        <div><div class="cc-label">Phone</div><div class="cc-value">0410 104 928</div></div>
+      </a>
+      <a href="mailto:hello@freshloop.com.au" class="contact-card">
+        <div class="cc-icon">@</div>
+        <div><div class="cc-label">Fresh Loop Email</div><div class="cc-value">hello@freshloop.com.au</div></div>
+      </a>
+    </div>
+    <div class="nl-wrap">
+     
