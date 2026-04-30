@@ -191,6 +191,11 @@ h2.sh-light{color:var(--white)}
 .proj-outcomes{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:18px;flex:1}
 .proj-outcomes li{font-size:13px;color:#475569;padding-left:20px;position:relative;line-height:1.6}
 .proj-outcomes li::before{content:"✓";position:absolute;left:0;font-size:10px;font-weight:900;color:var(--white);background:var(--blue);width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;top:3px;font-family:"Poppins",sans-serif}
+
+.proj-highlight{display:flex;align-items:flex-start;gap:10px;background:linear-gradient(135deg,rgba(59,130,246,0.08) 0%,rgba(59,130,246,0.04) 100%);border:1.5px solid rgba(59,130,246,0.22);border-radius:10px;padding:12px 14px;margin-bottom:18px}
+.ph-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.ph-text{font-size:12.5px;font-weight:700;color:var(--navy);line-height:1.5;font-family:"Poppins",sans-serif}
+.ph-label{display:block;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
 .proj-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .tool{font-size:11px;font-weight:500;padding:4px 11px;background:var(--surface);border-radius:6px;color:#475569;border:1px solid var(--bl)}
 .proj-link{margin-top:auto}
@@ -525,6 +530,7 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-type">Founder · Product & Operations</div>
         <h3 class="proj-title">Fresh Loop</h3>
         <p class="proj-desc">A food surplus marketplace connecting local cafés, bakeries and venues with nearby students and locals seeking affordable end-of-day meals. Built from zero to a live pre-launch product.</p>
+        <div class="proj-highlight"><span class="ph-icon">🏆</span><span class="ph-text"><span class="ph-label">Key achievement</span>Founded and operated a live startup — from idea to Play Store-ready product, real venue partnerships and a Healthy Cities Australia alignment deal.</span></div>
         <ul class="proj-outcomes">
           <li>Built public waitlist and early venue pipeline across Wollongong and the Illawarra.</li>
           <li>Secured Healthy Cities Australia partnership for food relief alignment.</li>
@@ -538,6 +544,7 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-type">Data Analysis · Python</div>
         <h3 class="proj-title">Amazon Category Demand & Inventory Analysis</h3>
         <p class="proj-desc">Cleaned structured and review-based Amazon product data, then translated discount, demand and category insights into inventory and demand-planning recommendations.</p>
+        <div class="proj-highlight"><span class="ph-icon">⚡</span><span class="ph-text"><span class="ph-label">Key achievement</span>End-to-end Python analysis — raw messy data to boardroom-ready inventory recommendations, not just charts.</span></div>
         <ul class="proj-outcomes">
           <li>Explored demand patterns across product categories using Python and pandas.</li>
           <li>Converted technical findings into practical supply chain recommendations.</li>
@@ -551,6 +558,7 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-type">Business Intelligence · Power BI</div>
         <h3 class="proj-title">CRM Health & Follow-ups Dashboard</h3>
         <p class="proj-desc">A one-page Power BI dashboard tracking data freshness, next-action coverage and 30-day customer touches to improve pipeline discipline. Built to be used, not just presented.</p>
+        <div class="proj-highlight"><span class="ph-icon">📊</span><span class="ph-text"><span class="ph-label">Key achievement</span>Production-grade DAX logic that surfaces follow-up gaps in real time — built for a team to use every single day, not just for assessment.</span></div>
         <ul class="proj-outcomes">
           <li>Designed KPI logic for action prioritisation across a sales pipeline.</li>
           <li>Used DAX rules to surface follow-up gaps and data quality issues.</li>
@@ -564,6 +572,7 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-type">Supply Chain · Operations Strategy</div>
         <h3 class="proj-title">Supply Chain Strategy & Operations Analysis</h3>
         <p class="proj-desc">An applied supply chain project analysing operational strategy, demand uncertainty, inventory decisions and process improvement opportunities through a business case lens.</p>
+        <div class="proj-highlight"><span class="ph-icon">🔗</span><span class="ph-text"><span class="ph-label">Key achievement</span>Translated academic supply chain frameworks into executive-ready recommendations — scored Distinction, cited for practical business applicability.</span></div>
         <ul class="proj-outcomes">
           <li>Applied supply chain frameworks to diagnose operational challenges and improvement priorities.</li>
           <li>Connected demand, inventory and supplier considerations to practical business recommendations.</li>
@@ -577,6 +586,7 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-type">Data Analysis · Market Insights</div>
         <h3 class="proj-title">Real Estate Market Analysis</h3>
         <p class="proj-desc">A real estate analysis project exploring property market patterns, price drivers and location-based insights to support clearer investment and business decision-making.</p>
+        <div class="proj-highlight"><span class="ph-icon">🏠</span><span class="ph-text"><span class="ph-label">Key achievement</span>Full-cycle analysis — data cleaning, price modelling, suburb comparisons and visual storytelling packaged for investor decision-making.</span></div>
         <ul class="proj-outcomes">
           <li>Cleaned and structured real estate data for comparison across property, suburb and price variables.</li>
           <li>Identified market patterns and potential drivers behind property value differences.</li>
@@ -590,6 +600,7 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-type">Hackathon · UniHack 2025 · Built in 24hrs</div>
         <h3 class="proj-title">White Christmas</h3>
         <p class="proj-desc">An invisible shield for digital identity. Photos look like scrambled static to AI scrapers and silently decode into perfect clarity for people you trust. Built to fight deepfake fraud targeting everyday people.</p>
+        <div class="proj-highlight"><span class="ph-icon">🏅</span><span class="ph-text"><span class="ph-label">Key achievement</span>Designed, built and demoed a working 4-layer adversarial protection system in 24 hours at UniHack 2025 — based on real AFP × Monash University research.</span></div>
         <ul class="proj-outcomes">
           <li>Tackled AI scraping at scale — malicious actors harvesting photos to craft deepfakes and identity fraud.</li>
           <li>Applied adversarial data-poisoning research (AFP × Monash University) into a practical full-stack tool.</li>
@@ -598,7 +609,6 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-tools"><span class="tool">Full-stack</span><span class="tool">Adversarial ML</span><span class="tool">Data Poisoning</span><span class="tool">UniHack 2025</span></div>
         <div class="proj-links">
           <a href="https://briandoanwork-a11y.github.io/white-christmas-portfolio" target="_blank" class="btn btn-navy">View live site →</a>
-          <a href="https://drive.google.com/file/d/1gDONKpH7Zqx1yw2_2qjRPMlJLkvlT5aT/view?usp=sharing" target="_blank" class="btn btn-outline">Project files →</a>
         </div>
       </div>
 
@@ -606,6 +616,7 @@ footer{background:var(--navy);border-top:1px solid var(--bd);padding:22px 56px;d
         <div class="proj-type">FoundersHack 2026 · Startup Concept</div>
         <h3 class="proj-title">Zerooh!</h3>
         <p class="proj-desc">A food surplus marketplace concept developed at FoundersHack Sydney 2026 — the same core problem that became Fresh Loop. Connecting venues with nearby customers to sell end-of-day food instead of wasting it.</p>
+        <div class="proj-highlight"><span class="ph-icon">🚀</span><span class="ph-text"><span class="ph-label">Key achievement</span>Validated a marketplace concept under a 48-hr Folklore Ventures sprint — the idea was strong enough to become a real live startup (Fresh Loop).</span></div>
         <ul class="proj-outcomes">
           <li>Developed and validated the food surplus marketplace concept under a 48-hour sprint with Folklore Ventures.</li>
           <li>Stress-tested assumptions around venue behaviour, customer willingness to pay, and same-day logistics.</li>
